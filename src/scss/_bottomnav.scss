@@ -1,0 +1,148 @@
+.i-UiBottomNavBase {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 100;
+    & .i-UiBottomNav-root {
+        height: 74px;
+        @include displayFlexCenter(flex, $itemCenter: true);
+        max-width: 500px;
+        background-color: $body-bg;
+        box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
+        &.noShadow {
+            box-shadow: none;
+        }
+        &.topBottomRadius {
+            border-radius: 30px 30px 0 0;
+        }
+        & a {
+            flex: 1;
+            @include displayFlexCenter(flex, $itemCenter: true);
+            height: 100%;
+            & .i-UiIconContainer {
+                width: 30%;
+                & svg {
+                    fill: #000;
+                }
+            }
+            /*oline*/
+            &.i-UiLinkReachOut{
+                flex: unset;
+            }
+            /*end*/
+        }
+        & a:nth-child(3) {
+            & .i-UiIconContainer {
+                width: 70%;
+            }
+        }
+        &.i-UiHeightAuto {
+            height: auto;
+        }
+        & .i-UiAreaPrice {
+            @include displayFlexbetween(flex, center, $contentBetween: true);
+            width: 100%;
+            padding-top: 1.5rem;
+            padding-right: 0.8125rem;
+            padding-left: 0.8125rem;
+            /*olin*/
+            &.center-area {
+                padding-right: 5rem;
+                padding-left: 5.8rem;
+            }
+            &.i-UiReachOutToUs{
+                font-size: 0.875rem;
+                padding-bottom: 1.5rem;
+                justify-content: center;
+                gap: 8px;
+                &.i-UiReachOutToUsSet{
+                    padding-bottom: 0;
+                }
+            }
+            /*end*/
+            & .i-UiTotalPrice {
+                color: $body-text-color;
+                font-size: $font-size-base;
+                font-weight: 700;
+                /*olin*/
+                &.i-UiReachOut{
+                    color: unset;
+                    font-size: 0.875rem;
+                }
+                /*end*/
+            }
+        }
+        & .i-UiAreaAddress {
+            @include displayFlexleft(flex, center, $contentLeft: true);
+            width: 100%;
+            padding-top: 1.5rem;
+            padding-right: 1.25rem;
+            padding-left: 1.25rem;
+            font-size: 0.875rem;
+            & h5 {
+                margin-bottom: 0.5rem;
+            }
+        }
+        & .i-UiCourierDetil {
+            @include displayFlexbetween(flex, center, $contentBetween: true);
+            font-size: $font-size-h5;
+            font-weight: 700;
+            width: 100%;
+            margin: 0.75rem 0 0 0;
+        }
+        & .i-UiFormBase {
+            padding-left: 1rem;
+            padding-right: 1rem;
+            width: 100%;
+        }
+        & .i-UiBtnArea {
+            padding-top: 1.5rem;
+            padding-bottom: 1.5rem;
+            padding-left: 0.8125rem;
+            padding-right: 0.8125rem;
+            & .i-UiBtnBase {
+                &.i-UiBtnRoot {
+                    letter-spacing: 1.5px;
+                    margin-left: 0.625rem;
+                    padding: 0.875rem 0.75rem;
+                    flex: unset;
+                    &:nth-child(1) {
+                        margin-left: 0;
+                    }
+                    &:nth-child(2) {
+                        width: 85%;
+                    }
+                    &.i-UiBtnForgotPass{
+                        width: 100%;
+                    }
+                    &.i-UiBtnPrimaryHeight{
+                        height: 3.3125rem;
+                    }
+                }
+                &.i-UiBtnIcon {
+                    padding: 0.625rem;
+                    border-radius: 15px;
+                }
+            }
+            /*olin*/
+            &.i-UiBtnAreaRefProg{
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+                & a{
+                    color: $theme-color;
+                    font-size: 0.875rem;
+                    letter-spacing: 1.68pt;
+                    padding-bottom: 0.5rem;
+                }
+                & p{
+                    color: #F23838;
+                    font-size: 0.875rem;
+                    letter-spacing: 1.68pt;
+                    padding-bottom: 0.5rem;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

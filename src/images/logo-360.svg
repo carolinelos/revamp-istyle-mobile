@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="52" height="30" viewBox="0 0 52 30">
+  <g id="Group_6379" data-name="Group 6379" transform="translate(0 2)">
+    <text id="_360" data-name="360" transform="translate(12 15)" font-size="16" font-family="Roboto-Bold, Roboto" font-weight="700"><tspan x="0" y="0">360</tspan></text>
+    <g id="Ellipse_32" data-name="Ellipse 32" transform="translate(41)" fill="none" stroke="#000" stroke-width="1.5">
+      <circle cx="3" cy="3" r="3" stroke="none"/>
+      <circle cx="3" cy="3" r="2.25" fill="none"/>
+    </g>
+    <path id="Subtraction_1" data-name="Subtraction 1" d="M26,11.444c-14.336,0-26-3.14-26-7a3.157,3.157,0,0,1,1.57-2.4A15.675,15.675,0,0,1,5.911,0a1.98,1.98,0,0,0-.8,1.446c0,2.915,9.509,5.286,21.2,5.286S47.5,4.36,47.5,1.446A1.718,1.718,0,0,0,47.025.325C50.28,1.527,52,2.952,52,4.444,52,8.3,40.337,11.444,26,11.444Z" transform="translate(0 16.556)"/>
+  </g>
+</svg>

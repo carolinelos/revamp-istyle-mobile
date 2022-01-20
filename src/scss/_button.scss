@@ -1,0 +1,380 @@
+.i-UiBtnBase {
+    color: inherit;
+    border: 0;
+    cursor: pointer;
+    margin: 0;
+    display: inline-flex;
+    outline: 0;
+    padding: 0;
+    position: relative;
+    align-items: center;
+    user-select: none;
+    border-radius: 0;
+    vertical-align: middle;
+    -moz-appearance: none;
+    justify-content: center;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    font-family: $roboto;
+    & .i-UiBtn-Label {
+        width: 100%;
+        display: inherit;
+        align-items: inherit;
+        justify-content: inherit;
+        & .i-UiBtn-LabelText {
+            display: flex;
+            font-family: $roboto;
+            font-size: 0.8125rem;
+            font-weight: bold;
+            align-items: baseline;
+            line-height: 1.2;
+            flex-direction: column;
+            text-transform: capitalize;
+            & span:last-child {
+                font-weight: 400;
+                color: #AAAAAA;
+            }
+        }
+        & .i-UiIconContainer {
+            margin-right: 0.625rem;
+        }
+        /*olin*/
+        &.i-UiMyiStyleInterest{
+            justify-content: flex-start;
+            font-size: 0.875rem;
+            & .statusNotConnectAcc{
+                color: $body-text-inactive;
+            }
+        }
+        /*end*/
+    }
+    &.i-UiIconButtonRoot {
+        flex: 0 0 auto;
+        padding: 0.5rem 0 0.5rem 0.5rem;
+        overflow: hidden;
+        text-align: center;
+        border-radius: 50%;
+        position: relative;
+    }
+    & .i-UiIconButtonLogo {
+        width: 1.5rem;
+        height: 1.5rem;
+        background-color: $theme-color-secondary;
+        border-radius: 50%;
+        position: relative;
+        &::before {
+            width: 2px;
+            height: 2px;
+            content: "";
+            border: solid black;
+            border-width: 0 3px 3px 0;
+            display: block;
+            padding: 2px;
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            position: absolute;
+            left: 32.6%;
+            top: 22%;
+        }
+    }
+    &.i-UiBtnRoot {
+        font-weight: 600;
+        font-size: 0.875rem;
+        width: 100%;
+        padding: $font-size-base 1.75rem;
+        box-sizing: border-box;
+        border-radius: 50px;
+        letter-spacing: 0.125rem;
+        & span:nth-child(2) {
+            margin-left:0.75rem;
+        }
+        /*olin*/
+        &.i-UiBtnConfirmDelete{
+            padding: 0 1.6875rem;
+        }
+        &.i-UiBtnTabClaim{
+            padding: 0.761rem 1rem;
+        }
+        /*end*/
+    }
+    &.i-UiBtnPrimary {
+        background-color: $theme-color-secondary;
+        color:$body-text-color;
+        &.i-UiBtnPrimaryHeight{
+            height: 3.3125rem;
+        }
+    }
+    /* oline */
+    &.i-UiBtnInactive {
+        background-color: $theme-color-inactive;
+        color:$body-text-inactive;
+        height: 3.3125rem;
+    }
+    /*end*/
+    &.i-UiBtnDefault {
+        background-color: $body-bg;
+        color: $body-text-color;
+        border: 1px solid #CACACA;
+        /* oline*/ 
+        &.i-UiForgotResendBlack{
+            height: 2.6875rem;
+            &.i-UiForgotResendCode{
+                color: $body-text-inactive;
+            }
+        }
+        &.i-UiBtnUpdateApp{
+            color: #E0E0E0;
+        }
+        /*end*/
+    }
+    
+    &.i-UiBtnTabClaimSelected{
+        color: $theme-color;
+        border: 1px solid $theme-color;
+    }
+    
+    &.i-UiBtnTransparent {
+        opacity: 0.7;
+    }
+    &.i-UiBtnOutline {
+        color: $body-text-color;
+        border: 1px solid #CACACA;
+        /*olin*/
+        &.i-UiBtnLoginWA{
+            letter-spacing: unset;
+        }
+        /*end*/
+        &.i-UiBtnPrimary {
+            border-color: $theme-color-secondary;
+        }
+    }
+    &.i-UiBtnArrow::after {
+        content: '';
+        background-image: url(../images/icons/feather-arrow-right.svg);
+        background-repeat: no-repeat;
+        width: 20px;
+        height: 13px;
+        position: absolute;
+        right: 16px;
+    } 
+    /*olin*/
+    &.i-UiBtnArrowInactive::after {
+        content: '';
+        background-image: url(../images/signUp/panah.svg);
+        background-repeat: no-repeat;
+        width: 20px;
+        height: 13px;
+        position: absolute;
+        right: 16px;
+    } 
+    /*end*/
+    &.i-UiBtnArrow:disabled {
+        &::after {
+            opacity: 0.5;
+        }
+    }
+    &.i-UiBtnArrowDown::after {
+        content: '';
+        background-repeat: no-repeat;
+        border: solid $body-text-color;
+        border-width: 0 2px 2px 0;
+        display: inline-block;
+        padding: 3px;
+        position: absolute;
+        top: 10px;
+        right: 16px;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+    } 
+    &.i-UiBtnSizeM {
+        width: 100%;
+        padding: 0.875rem 1.125rem;
+        font-size: 0.8125rem;
+    }
+    /*olin*/
+    &.i-UiBtnDiscover{
+        padding: 0.3545rem 1.125rem;
+        font-size: 0.875rem;
+        border: 1.5px solid $body-bg;
+        color: $body-bg;
+        &.i-UiBtnEditInterest{
+            border: 1px solid #D0D0D0;
+            color: unset;
+            padding: 0.45rem 1.125rem;
+        }
+    }
+    &.i-UiBtnSkip{
+        width: 16%;
+    }
+    &.i-UiBtnAddToCart {
+        padding: 0.375rem 0.75rem;
+        font-size: 0.875rem;
+    }
+    /*end*/
+    &.i-UiBtnSizeS {
+        width:100%;
+        padding: 0.5rem 1.75rem;
+        font-size: 0.75rem;
+    }
+    &.i-UiBtnSizeXS {
+        width:100%;
+        padding: 0.375rem 1.75rem;
+        font-size: 0.75rem;
+    }
+    &.i-UiBtnFLexible {
+        width: auto;
+    }
+    &.i-UiBtnIcon {
+        padding:0.75rem;
+        border-radius: 20px;
+    }
+    &.i-UiBtnText {
+        text-decoration: underline;
+        font-weight: 500;
+        &.i-UiColorPrimary {
+            color: $theme-color;
+        }
+    }
+    &.i-UiBtn50 {
+        width: 50%;
+    }
+    /*olin*/
+    &.i-UiBtnFb {
+        background-color: #3B5998;
+        color: white;
+    }
+    &.i-UiBtnLoginVerif{
+        margin-top: 1rem;
+        letter-spacing: unset;
+    }
+    &.i-UiBtnLeftIcon {
+        & .i-UiIconContainer {
+            position: absolute;
+            left: 30px;
+        }
+    }
+    /*end*/
+    &:disabled {
+        color: #AAAAAA;
+        background-color: #F3F3F3;
+    }
+}
+.i-UiTouchRippleRoot {
+    width: 0;
+    height: 0;
+    margin-left: -50px;
+    margin-right: -50px;
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.3);
+    transform: scale(0);
+    opacity: 1;
+}
+.rippleEffect {
+    animation: rippleDrop .6s linear;
+}
+@keyframes rippleDrop {
+    100% {
+      transform: scale(4);
+      opacity: 0;
+    }
+}
+.i-UiGroupButton {
+    width: 100%;
+    display: inline-flex;
+    & .i-UiBtnBase {
+        padding: 0.75rem 0;
+        width: 100%;
+        &.i-UiBtnText {
+            width: auto;
+            padding: 0 0.75rem;
+            text-decoration: none;
+            border-right: 1px solid #EAEAEA;
+            &:last-child {
+                border-right: none;
+                padding-right: 0;
+            }
+        }
+    }
+    &.i-UiBtnBanefit {
+        box-shadow: rgb(0 0 0 / 10%) 0px 2px 24px 0px;
+        border-radius: 10px;
+        & button:nth-child(1) {
+            width: 40%;
+            & .i-UiIconContainer {
+                margin-right: 0;
+            }
+        }
+        /*olin*/
+        &.i-UiMyiStyleActivities{
+            margin-top: 1rem;
+            flex-direction: column;
+            & .i-UiMyActivities{
+                margin: 1.3125rem 1rem 0.875rem 1rem;
+                font-size: 0.875rem;
+                &.i-UiAccEmailData{
+                    margin: 0 ;
+                    & .iconCheckVerified{
+                        margin-left: 0.75rem;
+                    }
+                }
+                & .i-UiTitleCat{
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 1.25rem;
+                    align-items: center;
+                    &.i-UiAccEmailInput{
+                        margin-bottom: 0.375rem;
+                        font-size: 0.75rem;
+                        & .statusVerif{
+                            color: $body-text-inactive;
+                        }
+                        &.i-UiAccPhone{
+                            margin-top: 1rem;
+                        }
+                        & .i-UiBtnVerif{
+                            font-size: 0.875rem;
+                        }
+                    }
+                }
+                & .i-UiStatusAct{
+                    color: $body-text-inactive;
+                    display: flex;
+                    align-items: center;
+                    gap: 0.625rem;
+                }
+                & .i-UiAccPhoneStatus{
+                    color: $body-text-inactive;
+                }
+            }
+            &.i-UiAccData{
+                box-shadow: unset;
+                margin: 1.5rem 0 0 0;
+            }
+            &.i-UiIconConnectTwit{
+                margin-bottom: 2rem;
+            }
+        }
+        /*end*/
+    }
+}
+
+@media only screen and (max-width: 321px) {
+    .i-UiBtnBase {
+        &.i-UiBtnRoot {
+            font-size: 10px;
+        }
+        &.i-UiBtnArrowDown::after {
+            top: 6px;
+        }
+    }
+    .i-UiIconContainer {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+
+

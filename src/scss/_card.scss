@@ -1,0 +1,607 @@
+.i-UiCardContainer {
+    display: flex;
+    column-gap: 16px;
+    width: 100%;
+    & li {
+        width: calc(100% / 2);
+        & .i-UiCardPrd {
+            padding-bottom: 0.875rem;
+            & .i-UiCardBody {
+                & .i-UiPriceRow {
+                    display: flex;
+                    height: 45px;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    font-family: $nunito;
+                }
+            }
+        }
+        & .i-UiBtnArea {
+            padding: 0;
+            justify-content: space-between;
+            & .i-UiBtnBase:nth-child(2) {
+                padding-left: 0.75rem;
+                padding-right: 0.75rem;
+                letter-spacing: 1.5px;
+                width: 75%;
+            }
+        }
+    }
+}
+.i-UiCardPrd {
+    display: $block;
+    position: relative;
+    width: 100%;
+    color: $body-text-color;
+    &:hover {
+        color: $body-text-color;
+    }
+    & .i-UiCardMedia {
+        display: $block;
+        position: relative;
+        & img {
+            width: 100%;
+        }
+        & .i-UiBrandTag {
+            position: absolute;
+            @include displayFlexCenter(flex, $itemCenter: true);
+            width: auto;
+            margin-top: -38px;
+            padding: 10px 16px 10px 10px;
+            box-sizing: border-box;
+            border-radius: 0 20px 0 0;
+            color: $body-bg;
+            font-family: $nunito;
+            letter-spacing: 0.2rem;
+            &.isport {
+                background-color: #3568B2;
+            }
+            &.lsa {
+                background-color: #9C5AE2;
+            }
+            &.k-mall {
+                background-color: #05499B;
+            }
+        }
+        &.i-UiCardPhoto {
+            & img {
+                border-radius: 50%;
+            }
+        }
+    }
+    
+    & .i-UiCardBody {
+        padding-top:$font-size-base;
+        display: $flex;
+        flex-direction: column;
+        background-color: $body-bg;
+        & h4 {
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        & p {
+            display: block;
+            height: 41px;
+            display: -webkit-box;
+            max-width: 100%;
+            overflow: hidden;
+            line-height: 1.2rem;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            text-overflow: ellipsis;
+        }
+        & .i-UiCardPrice {
+            font-weight: 700;
+            font-size: $font-size-base;
+        }
+        & .i-UiOldPrice {
+            text-decoration: line-through;
+            font-size: 0.75rem;
+            color: #707070;
+            margin-top: 1rem;
+        }
+    }
+    & .i-UiDiscTag {
+        @include displayFlexCenter(flex, $itemCenter: true);
+        width: 67px;
+        height: 67px;
+        border-radius: 50px;
+        background-color: $body-bg;
+        position: absolute;
+        box-shadow: 0 .125rem .25rem #00000029;
+        font-size: 1.125rem;
+        font-weight: 900;
+        font-family: $nunito;
+        top: 16px;
+        left: 16px;
+    }
+}
+
+.i-UiContainerCart {
+    padding-bottom: 1rem;
+    border-bottom:1px solid #DADADA;
+    /*olin*/
+    &.i-UiContainerClaim{
+        border: 1px solid #DADADA;
+        border-radius: 10px;
+        padding: 1.25rem;
+        & .i-UiClaimID{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+            & .i-UiIDReturn{
+                font-weight: 700;
+            }
+        }
+        &.i-UiContainerClaimNext{
+            margin-top: 1rem;
+        }
+    }
+    /*end*/
+    & h4 {
+        margin-bottom: 0;
+    }
+    &.i-UiGroupCart {
+        & .i-UiCardList {
+            padding-left: 20px;
+            &:first-child {
+                padding-left: 0;
+            }
+        }
+
+    }
+    & .i-UiCardList {
+        padding: 1.5rem 0 0 0;
+        border-bottom: none;
+        /*olin*/
+        &.i-UiClaimList{
+            padding: 0;
+        }
+        /*end*/
+        & .i-UiCardRow {
+            & div:nth-child(1) {
+                padding-top: 1.6875rem;
+            }
+        }
+        & .i-UiCardRow:nth-child(2) {
+            padding-left: 2.1875rem;
+            box-sizing: border-box;
+        }
+        & .i-UiCardBody {
+            & p {
+                max-width: 100%;
+                height: 18px;
+                overflow: hidden;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                text-overflow: ellipsis;
+                display: block;
+                display: -webkit-box;
+            }
+            & .i-UiCardNav {
+                display: flex;
+                justify-content: space-between;
+                & .col {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                }
+            }
+        }
+    }
+}
+
+.swiper-container.i-UiListPrdSwiper.i-UiPrdCardList {
+    & .swiper-slide {
+        width: 75%;
+    }
+    & .i-UiCardList {
+        padding: 0;
+        & .i-UiCardRow:nth-child(1) {
+            margin-bottom: 1rem;
+        }
+        & p {
+            height: 38px;
+            overflow: hidden;
+        }
+    }
+}
+
+.i-UiCardList {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 0 ;
+    border-bottom: 1px solid #DADADA;
+    &:last-child {
+        border-bottom: none;
+    }
+    & .i-UiCardRow {
+        display: flex;
+        width: 100%;
+        &:nth-child(2) {
+            flex-wrap: wrap;
+        }
+        & .i-UiCardMedia {
+            width: 30%;
+            & img {
+                width: 100%;
+            }
+        }
+        & .i-UiCardBody {
+            display: flex;
+            width: 65%;
+            flex-direction: column;
+            padding-left: $font-size-base;
+            line-height: 1.4;
+            & h5 {
+                margin-bottom: 0;
+            }
+            & p {
+                font-size: 0.875rem;
+                margin-bottom: $font-size-base;
+            }
+            & span {
+                font-size: 0.875rem;
+            }
+            & .i-UiCardPrice {
+                font-weight: 700;
+                font-size: $font-size-base;
+                margin-bottom: 0.5rem;
+                /*olin*/
+                &.i-UiCardPriceWL{
+                    margin-bottom: 1rem;
+                }
+                /*end*/
+            }
+            & .i-UiOldPrice {
+                text-decoration: line-through;
+                font-size: 0.875rem;
+                color: #707070;
+                margin-top: 1rem;
+            }
+            /*olin*/
+            & .i-UiStatClaim{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: #E1FFED;
+                color: #2ED573;
+                font-weight: 500;
+                margin-left: 1.5rem;
+                font-size: 0.75rem;
+                padding: 0.5rem 0;
+                gap: 0.625rem;
+                &.i-UiStatPending{
+                    background-color: #FFFBDA;
+                    color: $theme-color;
+                    margin-left: 5rem;
+                }
+            }
+        }
+        & .i-UiSizeChart {
+            @include displayFlexbetween(flex, center, $contentBetween: true);
+            width: 100%;
+            & .i-UiSizeResult {
+                font-weight: 800;
+                font-size: 0.875rem;
+                padding-top: $font-size-base;
+                padding-bottom: 0.75rem;
+                & span {
+                    font-weight: 400;
+                }
+            }
+        }
+            & .i-UiSizeList {
+                margin: 0;
+                width: 100%;
+                & .swiper-slide {
+                    width: 20%;
+                    /*olin*/
+                    &.swiper-filter{
+                        width: 33%;
+                    }
+                    /*end*/
+                }
+                & .i-UiSizeItem {
+                    @include displayFlexCenter(flex, $itemCenter: true);
+                    padding: 0.8125rem 1.6875rem;
+                    font-size: 0.875rem;
+                    font-weight: 500;
+                    border: 1px solid #CACACA;
+                    border-radius: 50px;
+                    width: 100%;
+                    box-sizing: border-box;
+                    &.checked {
+                        border-color: #FA751D;
+                        color: #FA751D;
+                    }
+                    /*olin*/
+                    &.i-UiFilterCat{
+                        padding: 0.8125rem 1rem;
+                    }
+                    /*end*/
+                }
+            }
+    }
+    /*olin*/
+    &.i-UiFilterSort{
+        border-bottom: none;
+        padding: 0;
+        margin-top: 1.5rem;
+    }
+    /*olin*/
+}
+
+.i-UiBox {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #D0D0D0;
+    margin-bottom: $font-size-base;
+    border-radius: 5px;
+    & a {
+        color: $text-color;
+    }
+    /*olin*/
+
+    & .i-UiPriceBox {
+        padding: 0 1rem 1rem 1rem;
+        display: inline-flex;
+        & .i-UiPrice{
+            width: 100%;
+            h6{
+                font-family: "Roboto", sans-serif;
+                font-weight: 400;
+            }
+            & .i-UiNominal{
+                border-bottom: 1px solid #252525;
+                padding-bottom: 0.625rem;
+            }
+            span{
+                margin: 1rem;
+            }
+        }
+        & .i-UiRange{
+            margin: 1rem;
+        }
+    }
+    &.i-UiCek{
+        display: flex;
+        border-radius: 10px;
+        border: 0px;
+        flex-direction: row;
+        justify-content: space-between;    
+    }
+    &.i-UiBoxBank{
+        margin-top: 1rem;
+    }
+    &.i-UiBoxLanguage{
+        margin-bottom: 0;
+    }
+    /*end*/
+    &.i-UiBoxRow {
+        flex-direction: row;
+        justify-content: space-between;
+        & .i-UiBtnArea {
+            width: auto;
+            padding: 0 1rem;
+        }
+        /*olin*/
+        &.i-UiCek {
+            &.i-UiChecked {
+                background-color: transparent;
+            }   
+        }
+        /*end*/
+        & .checkList {
+            visibility: hidden;
+            opacity: 0;
+            transition: all .3s ease-in-out;
+            /*olin*/
+            & .checked2{
+                background: #fed000;
+                border-radius: 10px;
+                height: 19px;
+                width: 19px;
+                border: 1px solid #FED000;
+                z-index: 1;
+            }
+            /*end*/
+        }
+        &.i-UiChecked {
+            background-color: #FFFBDA;
+            border-color: $body-text-color;
+            & .checkList {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+    &.i-UiSelectBox {
+        background-color: #FFFBDA;
+        border-color: $body-text-color;
+    }
+    & .i-UiHeadBox {
+        padding: $font-size-base;
+        position: relative;
+        width: 100%;
+        box-sizing: border-box;
+        /*olin*/
+        &.set { 
+            padding: 1.25rem 0 1.25rem $font-size-base;
+        }
+        &.i-UiCardPN{
+            padding-right: 3.1875rem;
+        }
+        /*end*/
+        & h5 {
+            margin-bottom: 2px;
+        }
+        & h6 {
+            margin-bottom: 0;
+        }
+        & .i-UiType {
+            font-size: $font-size-h5;
+        }
+        &.i-UiBoxTypeBtn::after {
+            content: "";
+            position: absolute;
+            padding: 12px;
+            background-image: url(../images/icons/Icon-arrow-forward.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            top: 22px;
+            right: 10px;
+        }
+    }
+
+    & .i-UiBodyBox {
+        padding:$font-size-base;
+        & h5 {
+            margin-bottom: $font-size-base;
+        }
+        &.i-UiCourierDetil {
+            display: none;
+        }
+        /*olin*/
+        & span{
+            font-size: 0.875rem;
+            line-height: 20px;
+        }
+        & .i-UiBankName{
+            display: flex;
+            justify-content: space-between;
+            & .i-UiIconEditBank{
+                padding-top: 4px;
+            }
+        }
+        /*olin*/
+        & .i-UiBoxFilter{
+            color: $theme-color;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background-color: #F3F3F3;
+            border-radius: 100px;
+            padding: 8px 12px;
+            margin-right: 0.5rem;
+            & .i-UiColorFilter{
+                padding: 6px;
+                border-radius: 50%
+            }
+            & .i-ColorRed{
+                background-color: #FF8686;
+            }
+            & .i-ColorBlack{
+                background-color: #000000;
+            }
+        }
+        /*end*/
+    }
+    & .i-UiFooterBox {
+        padding:$font-size-base;
+        display: flex;
+        & .i-UiGroupButton {
+            justify-content: flex-end;
+            & .i-UiBtnText {
+                color: #FA751D;
+                font-weight: 600;
+                font-size: 0.875rem;
+            }
+        }
+    }
+    /*olin*/
+    & .i-UiHeadBoxFilter{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        border-radius: 5px;
+    }
+    /*end*/
+    &.i-UiCourierActive {
+        & .i-UiHeadBox {
+            background-color: #FFFBDA;
+            border-radius: 5px 5px 0 0;
+            border-bottom: 1px solid #D0D0D0;
+            &.i-UiBoxTypeBtn::after {
+                padding: 11px;
+                background-image: url(../images/icons/Icon-awesome-check.svg);
+                right: 16px;
+                top: 25px;
+            }
+            /*olin*/
+            &.i-UiHeadBoxFilter{
+                background-color: #FFFFFF;
+            }
+        }
+        & .i-UiBodyBox {
+            &.i-UiCourierDetil {
+                display: block;
+                & .i-UiPinPoin {
+                    font-size: $font-size-h5;
+                    font-weight: 700;
+                    @include displayFlexleft(flex, center, $contentLeft: true);
+                    margin-bottom: 0.625rem;
+                    & .i-UiIconContainer {
+                        margin-right: 0.625rem;
+                    }
+                }
+                & .i-UiPickUpTime {
+                    display: flex;
+                    flex-direction: column;
+                    font-size: $font-size-h5;
+                    font-weight: 700;
+                    line-height: 20px;
+                    padding-top: $font-size-base;
+                    & .i-UiTime {
+                        @include displayFlexbetween(flex, center, $contentBetween: true);
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+    }
+
+    & h5 {
+        font-family: $roboto;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .i-UiCardPrd {
+        & .i-UiCardMedia {
+            .i-UiBrandTag {
+                width: auto;
+                font-size: 0.75rem;
+            }
+        }
+    }
+
+    .i-UiCardList {
+        & .i-UiCardRow {
+            & .i-UiCardBody {
+                & h5, p {
+                    font-size: 0.75rem;
+                }
+                & p {
+                    margin-bottom: 0.3125rem;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 361px) {
+    .i-UiCardContainer {
+        & li {
+            & .i-UiBtnArea {
+                & .i-UiBtnBase:nth-child(2) {
+                    padding-left: 0.625rem;
+                    padding-right: 0.625rem;
+                    width: 77%;
+                }
+            }
+        }
+    }
+}

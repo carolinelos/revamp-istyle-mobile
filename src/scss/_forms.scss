@@ -1,0 +1,393 @@
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button
+{
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number]
+{
+  -moz-appearance: textfield;
+}
+
+
+.i-UiInputBase-root {
+    color: #fff;
+    cursor: text;
+    display: inline-flex;
+    width: 100%;
+    position: relative;
+    font-size: $font-size-base;
+    box-sizing: border-box;
+    align-items: center;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1.1876em;
+    letter-spacing: 0.00938em;
+}
+.i-UiInputBase-input {
+    font: inherit;
+    color: $body-text-color;
+    width: 100%;
+    border: 0;
+    height: 1.1876em;
+    margin: 0;
+    display: block;
+    padding: 6px 0 7px;
+    min-width: 0;
+    background: none;
+    box-sizing: border-box;
+    letter-spacing: inherit;
+    -webkit-tap-highlight-color: transparent;
+    &:focus {
+        outline: none;
+    }
+    &::placeholder {
+        color: #AAAAAA;
+    }
+}
+.i-UiSearchField-root {
+    width: 100%;
+    height: 3.125rem;
+    display:inline-flex;
+    position: relative;
+    background-color: #F5F5F5;
+    transition: top 1s ease-in-out;
+    & .i-UiSearchIcon {
+        height: 100%;
+        @include displayFlexCenter(flex, $itemCenter: true); 
+        padding: 0 1.25rem;
+    }
+    & .i-UiSearchInput {
+        width: 100%;
+        padding: 8px 8px 8px 0px;
+    }
+    & .i-UiInputBase-root {
+        & .js-clearSearchBox {
+            margin-right: 0.625rem;
+            cursor: pointer;
+        }
+    }
+}
+
+.i-UiNumberDecrement {
+    display: flex;
+    
+    & .input-number-decrement, .input-number-increment, .input-number {
+        border-top: 1px solid #CACACA;
+        border-bottom: 1px solid #CACACA;
+        border-left: none;
+        border-right: none;
+        height: 29px;
+        user-select: none;
+    }
+    & .input-number {
+        width: 55px;
+        height: 31px;
+        padding: 0 12px;
+        vertical-align: top;
+        text-align: center;
+        outline: none;
+    }
+    & .input-number-increment, .input-number-decrement {
+        @include displayFlexCenter(flex, $itemCenter: true);
+        width: 30px;
+        line-height: 38px;
+        color: $body-text-color;
+        text-align: center;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    & .input-number-decrement {
+        border-right: none;
+        border-radius: 50px 0 0 50px;
+        border-left: 1px solid #CACACA;
+    } 
+    & .input-number-increment {
+        border-left: none;
+        border-radius: 0 50px 50px 0;
+        border-right: 1px solid #CACACA;
+    } 
+   
+}
+.i-UiFormBase {
+    padding: 1rem 0;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    /*olin*/
+    &.setPstn{
+        margin-top: 0.5rem;
+        padding: 0;
+        &.i-UiMarginLink{
+            margin-top: 0;
+            &.i-UiMyiStylePhotoUnverif{
+                width: 100%;
+            }
+            &.i-UiEditAccPhoto{
+                width: 30%;
+            }
+        }
+    }
+    &.i-UiInputOTP {
+        padding: 0 2.125rem 1rem 2.125rem;
+        margin-top: 2rem;
+        & .i-UiInputContainer{
+            & input {
+            font-size: 2rem;
+            text-align: center;
+            padding-bottom: 1rem;
+            letter-spacing: 0.547rem;
+            font-weight: 500;
+            }
+        }
+    }
+    &.i-UiLoginWithPassword{
+        padding-top: 1rem;
+        gap: 1rem;
+    }
+    /*end*/
+    &.i-UiFormGroup {
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+        column-gap: 1rem;
+    }
+    & .i-UiInput_Alert {
+        font-size: 0.75rem;
+        color: #808080;
+        margin-top: 4px;
+    }
+    & .i-UiInputContainer {
+        width: 100%; 
+        position: relative;
+        & label {
+            color: #CACACA;
+            font-size: 0.875rem;
+            position: absolute; 
+            cursor: text;
+            transform: translateY(-25px);
+            transition: transform 0.3s ease;
+            left: 0;
+            bottom: -15px;
+        }
+        & input {
+            width: 100%;
+            height: 28px;
+            font-size: 0.875rem;
+            transition: 0.6s;
+            border: none;
+            border-bottom: 1px solid #DADADA;
+            background-color: transparent;
+            &:focus {
+              outline: none;
+              border-bottom: 1px solid $body-text-color;
+            }
+            &::placeholder {
+                color: #CACACA;
+            }
+            &[type="date"] {
+                background:#fff url(../images/icons/icon-calendar.svg)  100% 50% no-repeat ;
+                &::-webkit-inner-spin-button {
+                    display: none;
+                }
+                &::-webkit-calendar-picker-indicator {
+                    opacity: 0;
+                }
+                &::-webkit-datetime-edit {display: none;}
+            }
+        }
+        /* olin */
+        & .i-iconVisibility{
+            position: absolute;
+            right: 0;
+            color: #252525;
+        }
+        /*end*/
+        &.animation {
+            & label {
+                transform: translateY(-50px);
+                font-size: 0.75rem;
+                text-transform: uppercase;
+                font-weight: 600;
+                color: $body-text-color;
+            }
+            & input {
+                border-bottom: 1px solid $body-text-color;
+                &[type="date"] {
+                    &::-webkit-datetime-edit {display: block;}
+                }
+                
+            }
+        }
+        &.animation-color label {
+            color: $body-text-color;
+        }
+        &.i-UiSelectInput {
+            &::after {
+                content: "";
+                position: absolute;
+                padding: 0.5rem;
+                background-image: url(../images/icons/Icon-arrow-downBlack.svg);
+                background-repeat: no-repeat;
+                background-position: center;
+                top: 7px;
+                right: 0;
+            }
+            & input {
+                cursor: pointer;
+            }
+            & label {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.i-UiOptionSelect {
+    & li {
+        cursor: pointer;
+    }
+}
+
+.i-UiCheckCategory {
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    & input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        width: 0;
+        &:checked ~ .i-UiIconCheck {
+            background-color: rgba(0, 0, 0, 0.5);
+            &::after {
+                display: block;
+            }
+        }
+    }
+    & .i-UiIconCheck {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        height: 100px;
+        width: 100px;
+        border-radius: 48px;
+        &:after {
+            content: url(../images/onBoarding/Checklist.svg);
+            position: absolute;
+            display: none;
+            left: 28px;
+            top: 35px;
+          }
+    }
+}
+
+.i-UiCheckboxBase {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-size: $font-size-h5;
+    height: 21px;
+    & input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+        &:checked ~ .i-UiCheckmark {
+            background-color: $theme-color-secondary;
+            border: 1px solid $theme-color-secondary;
+            &::after {
+                display: block;
+            }
+        }
+    }
+    & .i-UiCheckmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 19px;
+        width: 19px;
+        background-color: $body-bg;
+        border: 1px solid #CACACA;
+        border-radius: 3px;
+        &:after {
+            content: "";
+            position: absolute;
+            display: none;
+            left: 6px;
+            top: 1px;
+            width: 5px;
+            height: 10px;
+            border: solid $body-text-color;
+            border-width: 0 3px 3px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+          }
+    }
+    /*olin*/
+    &.i-UiRegisIconEmail{
+        margin: 1rem 0 1rem 0;
+        & .groupEmail{
+            & p:nth-child(1) {
+                font-size: 0.825rem; 
+                margin-bottom: 6px;
+            }
+        }
+    }
+    & .iconCheck{
+        position: absolute;
+        left: 0px;
+    }
+    /*end*/
+}
+
+.i-UiSwitch {
+    position: relative;
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	width: 40px !important;
+	height: 26px;
+	border-radius: 30px;
+	cursor: pointer;
+	background: #ccc;
+	transition: box-shadow 0.3s ease-in-out, padding 0.25s ease-in-out;
+	transition-delay: 0.1s, 0s;
+    &:focus {
+        border: 0;
+        outline: 0;
+    }
+    &:checked {
+        transition-delay: 0s, 0s;
+	     box-shadow: inset 0 0 0 2.62857em #252525 !important;
+	    padding-left: 14px;
+    }
+    &::before {
+        display: inline-block;
+        height: 20px;
+        width: 20px;
+        margin: 3px;
+        background-color: #fff;
+        border-radius: 50px;
+        transition: all 0.1s ease 0.1s;
+    }
+    &::after, &::before {
+        content: "";
+	    display: block;
+    }
+    &:active::before {
+        transition: all 0.1s ease 0.05s;
+    }
+}
+
+

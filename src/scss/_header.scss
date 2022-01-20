@@ -1,0 +1,177 @@
+.i-UiHeader-root {
+    background-color: $heading-color;
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    box-shadow: none;
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    z-index: 1100;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    /*oline*/
+    &#emailInput{
+        position: relative;
+        z-index: unset;
+        & .i-UiToolbar{
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    & .menuMyEvents{
+        display: flex;
+        font-size: 0.875rem;
+        justify-content: center;
+        & .i-UiTabSelected{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 3px solid $theme-color;
+            padding: 1rem 2rem;
+            font-weight: 500;
+            &.i-UiTabUnSelect{
+                border: unset;
+                color: $body-text-inactive;
+            }
+        }
+    }
+    & .i-UiToolbar {
+        display: flex;
+        position: relative;
+        align-items: center;
+        padding: 0 1.25rem;
+        min-height: 64px;
+        justify-content: space-between;
+        background-color:$body-bg;
+        & .i-UiGroupIcons {
+            display: flex;
+            align-items: center;
+            & .i-UiBtnBase {
+                &.i-UiMallBtn {
+                    padding: 0.5rem;
+                }
+            }
+            & .i-UiIconContainer {
+                width: 28px; 
+                height: 28px;
+            }
+        }
+        & .i-UiLogoGroup {
+            @extend .i-UiGroupIcons;
+            margin-left: 0;
+            & img {
+                margin-right: 8px;
+            }
+        }
+        & h1 {
+            font-size: 1.125rem;
+            margin-bottom: 0;
+            font-weight: 800;
+        }
+    }
+    & .i-UiSubToolbar {
+        padding: 1rem 1.5rem;
+        font-size: $font-size-h5;
+    }
+    &.i-UiScrollHeader {
+        box-shadow: 0 .125rem .25rem #00000029;
+    }
+    & .i-UiSearchIcon {
+        & svg:nth-child(1) {
+            display: block;
+        }
+        & svg:nth-child(2) {
+            display: none;
+        }
+    }
+    
+    & .i-UiSearchResult {
+        width: 100%;
+        padding: $font-size-base;
+        top: 0;
+        height: 100vh;
+        background-color: $body-bg;
+        opacity: 0;
+        visibility: hidden;
+	    transition: 200ms ease-in;
+        position: absolute;
+        box-sizing: border-box;
+        z-index: -9;
+        padding-top: 70px;
+        overflow: auto;
+        /*olin*/
+        &.i-UiSearchFilter{
+            position: relative;
+            height: auto;
+            visibility: unset;
+            opacity: unset;
+            padding-top: 1.5rem;
+        }
+        /*end*/
+        & .i-UiSearchList {
+            margin-bottom: $font-size-base;
+            & ul {
+                border-bottom: 1px solid #DADADA;
+                cursor: pointer;
+                padding-bottom: $font-size-base;
+                & h3 {
+                    margin-top: $font-size-base;
+                }
+                & img {
+                    width: 100%;
+                }
+            }
+            & .keyword {
+                color: #AAAAAA;
+                display: block;
+                padding: 0.3125rem 0;
+                font-weight: 500;
+            }
+        }
+        & .i-UiSearchBody-root {
+            padding-bottom: $font-size-base;
+            margin-bottom: $font-size-base;
+            border-bottom: 1px solid #DADADA;
+            width: 100%;
+            display: inline-flex;
+            flex-wrap: wrap;
+            grid-gap: $font-size-base;
+            & h3 {
+                width: 100%;
+                margin-bottom: 0;
+            }
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+    }
+    &.i-UiResultsActive {
+        & .i-UiToolbar {
+            display: none;
+        }
+        & .i-UiSearchResult {
+            opacity: 1;
+            visibility: visible;
+        }
+        & .i-UiSearchField-root {
+            & .i-UiSearchIcon {
+                cursor: pointer;
+                -webkit-tap-highlight-color: transparent;
+                & svg:nth-child(1) {
+                    display: none;
+                }
+                & svg:nth-child(2) {
+                    display: block;
+                }
+            }
+        }
+
+    }
+    
+}

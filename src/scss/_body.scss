@@ -1,0 +1,1786 @@
+@import "variables.scss";
+body {
+    @extend address ;
+    -webkit-text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+    background-color: $body-bg;
+    color: $text-color;
+    font-size: $font-size-base;
+    font-family: $roboto;
+    -webkit-user-drag: none;
+}
+address, blockquote, cite, dd, div, dl, dt, fieldset, form, html, input, li, ol, p, pre, select, span, table, td, textarea, th, ul {
+    margin: 0;
+	padding: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: $nunito;
+    margin-bottom: 1rem;
+}
+h1 {
+    @extend form ;
+    font-size: $font-size-h1;
+}
+h2 {
+    @extend form ;
+    font-size: $font-size-h2;
+    font-weight: 800;
+}
+h3 {
+    @extend form ;
+    font-size: $font-size-h3;
+}
+h4 {
+    @extend form ;
+    font-size: $font-size-h4;
+}
+h5 {
+    @extend form ;
+    font-size: $font-size-h5;
+}
+h6 {
+    @extend form ;
+    font-size: $font-size-h6;
+}
+a {
+    -webkit-tap-highlight-color: transparent;
+	text-decoration: none !important;
+	color: $theme-color;
+    font-weight: 500;
+	&:hover { color: #FED000; }
+	img { border: none; }
+}
+ul {
+    list-style: none;
+}
+
+div[onclick] {
+    cursor: pointer;
+}
+
+body {
+    & .i-UiWrap {
+        flex-wrap: wrap;
+    }
+    & .i-UiRowGap {
+        row-gap: $font-size-base;
+    }
+    & .i-UiP-0 {
+        padding: 0;
+    }
+    & .i-UiPB-0 {
+        padding-bottom: 0 !important;
+    }
+    & .i-UiPT-16 {
+        padding-top: 1rem;
+    }
+    & .i-UiPB-16 {
+        padding-bottom: 1rem !important;
+    }
+    & .i-UiPR-0 {
+        padding-right: 0;
+    }
+    & .iUiPL-0 {
+        padding-left: 0 !important;
+    }
+    & .i-UiMT-0 {
+        margin-top: 0 !important;
+    }
+    & .i-UiMT-16 {
+        margin-top: $font-size-base;
+    }
+    & .i-UiMT-20 {
+        margin-top: 1.25rem;
+    }
+    & .i-UiMB-0 {
+        margin-bottom: 0 !important;
+    }
+    & .i-UiMB-10 {
+        margin-bottom: 0.625rem !important;
+    }
+    & .i-UiMB-16 {
+        margin-bottom: 1rem !important;
+    }
+    & .MidGray {
+        background-color: #F3F3F3;
+    }
+    & .BgRedFlash {
+        background-color: #E43737;
+    }
+    & .BgYellowLight {
+        background-color: #FFFBDA;
+    }
+    & .fontRedFlash {
+        color: #E43737 !important;
+    }
+    & .noBorder {
+        border: none !important;
+    }
+    & .borderColorDark {
+        border-color: $body-text-color;
+    }
+    & .i-UiLineText {
+        width: 100%;
+        @include displayFlexCenter(flex, $itemCenter: true);
+        line-height:2rem;
+        padding:0;
+        position:relative;
+        overflow:hidden;
+        text-align:center;
+        margin-bottom: $font-size-base;
+        &::before, &::after {
+            content:" ";
+            position:absolute;
+            top:50%;
+            height:2px;
+            border-top:1px solid #D0D0D0;
+        }
+        &::before {
+            left: 0;
+            width: 45%;
+        }
+        &::after {
+            right: 0;
+            width:45%;
+        }
+    }
+    & hr {
+        margin:1.5rem 0 1rem 0;
+        border-width: 0 0 1px 0;
+        border-color: #DADADA;
+        &.lineDark {
+            border-color: $text-color;
+        }
+    }
+}
+
+.i-UiScreenIntro {
+    position: absolute;
+    max-width: inherit;
+    visibility: hidden;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: rgba(37 37 37 / 90%);
+    opacity: 0;
+    z-index: 1111;
+    transition: opacity 1s ease-in;
+    & .i-UiIntroLogo {
+        display: flex;
+        align-items: center;
+        padding: 0 1rem;
+        min-height: 64px;
+        background-color: #fff;
+        width: 150px;
+        box-sizing: border-box;
+        border-radius: 0 0 35px 0;
+        & img {
+            margin-right: 5px;
+        }
+    }
+    &.intro-active {
+        visibility: visible;
+        opacity: 1;
+    }
+    & .i-UiIntroBody {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        justify-content: flex-start;
+        color: $body-bg;
+        padding-left: 2.5rem;
+        padding-top: 1.5rem;
+        width: 246px;
+        line-height: 1.6;
+        font-family: $nunito;
+        & p span {
+            display:flex;
+            align-items: center;
+        }
+    }
+}
+
+.i-UiScaleLogo {
+    width: 80px;
+    height: 80px;
+    display: block;
+    border-radius: 50px;
+    position: fixed;
+    overflow: hidden;
+    background-color:rgb(254 208 0 / 30%);
+    opacity: 0.3;
+	-webkit-animation: i-UiScaleLogo 3s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite backwards;
+	animation: i-UiScaleLogo 3s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite backwards;
+}
+
+ @-webkit-keyframes i-UiScaleLogo {
+    0% {
+      -webkit-transform: scale(0);
+              transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      opacity: 1;
+    }
+  }
+  @keyframes i-UiScaleLogo {
+    0% {
+      -webkit-transform: scale(0);
+              transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+
+.i-UiMainLayout {
+    max-width: 500px;
+    min-height: 100vh;
+    box-shadow: 0 0 48px 0 rgb(0 0 0 / 20%);
+    margin: 0 auto;
+    position: relative;
+    padding-bottom: 4.625rem;
+    &.i-UiLayoutNavBtnArea {
+        padding-bottom: 5.5rem;
+    }
+    &.i-UiLayoutDoubleNav {
+        padding-bottom: 210px;
+    }
+    &.active-overlay {
+        & .i-UiOverlay {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+    &#i-UiCategoryPage {
+        & .i-UiContainerBase {
+            padding-top: 64px;
+        }
+    }
+    /*olin_Sign UP*/
+    &#i-UiSignUpPage {
+        & .i-UiContainerBase {
+            padding-top: 0px;
+        }
+    }
+    & .i-UiSignUpBanner {
+        & .i-SignUpBanner img {
+            width: 100%;
+        }
+    }
+    &.i-UiRegisterSuccess{
+        display: flex;
+        align-items: center;
+    }
+    /*end*/
+    & .i-UiContainerBase {
+        width: 100%;
+        position: relative;
+        padding-top: 115px;
+        &.i-UiNoSearchBar {
+            padding-top: 64px;
+        }
+        & .i-UiDescription {
+            text-align: justify;
+        }
+        &  .i-UiTitleSection {
+            font-weight: 800;
+        }
+        & .i-UiContainerBase-root {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 1.25rem;
+            margin-bottom: 1.5rem;
+            &.i-UiBg {
+                & .i-UiCardBody {
+                    padding-bottom: $font-size-base;
+                    background-color: transparent;
+                }
+            }
+            /*olin*/
+            & .i-UiSearchBody-root{
+                margin-top: 1rem;
+                width: 105%;
+                p{
+                    margin-bottom: 1rem;
+                    font-size: 0.875rem;
+                }
+            }
+            & .submenu{
+                margin-top: 1.5rem;
+                padding-top: 1.5rem;
+                border-top: 1px solid #252525;
+                p{
+                    margin-bottom: 1rem;
+                    font-size: 0.875rem;
+                }
+            }
+            & .subfilterCat{
+                border-top: none;
+                margin-top: -0.5rem;
+                padding: 0 0 1rem 0;
+            }
+            & .i-UiSettingLogin{
+                font-size: 0.875rem;
+                & p:nth-child(2){
+                    margin-bottom: 1rem;
+                    font-weight: 700;
+                }
+                & p:nth-child(4){
+                    margin-bottom: 1.25rem;
+                    font-weight: 700;
+                }
+                & .i-UiSettingLog{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding-bottom: 1.5rem;
+                    margin: 1.5rem 0 1.5rem 0;
+                    border-bottom: 1px solid #DADADA;
+                    & svg{
+                        margin: 0 0.5rem 0 0.5rem;
+                        width: 30%;
+                    }
+                    & .i-UiEmailAcc{
+                        & p:nth-child(1){
+                            font-size: 0.75rem;
+                        }
+                        & p:nth-child(2){
+                            margin: 0.375rem 0 0 0;
+                            font-weight: 400;
+                        }
+                    }
+                }
+                & .i-UiSettingLanguage{
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    & p {
+                        padding-top: 1rem;
+                        font-weight: 400;
+                    }
+                    & .i-UiChooseLanguage{
+                        display: inline-flex;
+                        align-items: center;
+                    }
+                }
+            }
+            & .i-UiRefProg{
+                margin-top: 2.8125rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                & .i-UiDescRefProg{
+                    margin-top: 2.625rem;
+                    line-height: 20px;
+                    & h4 {
+                        font-family: "Roboto", sans-serif;
+                    }
+                    & p {
+                        font-size: 0.875rem;
+                    }
+                }
+            }
+            & .i-UiMyEvents{
+                display: flex;
+                justify-content: center;
+                padding-top: 1rem;
+                font-size: 0.875rem;
+                & .i-UiDetailEvent{
+                    width: 100%;
+                    border-bottom: 1px solid #DADADA;
+                    & .i-UiCatMember{
+                        font-size: 1rem;
+                        display: flex;
+                        justify-content: space-between;
+                        margin-bottom: 1.5rem;
+                        & span{
+                            font-weight: 700;
+                        }
+                        & p{
+                            font-size: 0.75rem;
+                            font-weight: 500;
+                            letter-spacing: 1.44pt;
+                            color: $body-bg;
+                        }
+                        & a{
+                            letter-spacing: 1.68pt ;
+                            font-size: 0.875rem;
+                        }
+                        & .i-UiLabelCardName{
+                            font-size: 0.75rem;
+                            letter-spacing: 1.44pt;
+                        }
+                        & .i-UiBtnDetailCard{
+                            letter-spacing: 1.68pt;
+                        }
+                    }
+                    & .i-UiCardName{
+                        display: flex;
+                        justify-content: flex-end;
+                        margin-top: 4.5rem;
+                        font-size: 0.75rem;
+                        letter-spacing: 1.44pt;
+                        font-weight: 700;
+                        & p{
+                            color: #FFF;
+                        }
+                    }
+                    &.i-UiBannerMember{
+                        font-size: 0.75rem;
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                    & .i-UiBannerMember{
+                        display: flex;
+                        width: 100%;
+                        padding-bottom: 1.5rem;
+                        & .i-UiLabelBanner{
+                            padding: 0.625rem 0 0 0.625rem;
+                            position: absolute;
+                            width: 84%;
+                            & svg{
+                                margin-bottom: 0.625rem;
+                            }
+                        }
+                    }
+                    & img{
+                        width: 100%;
+                    }
+                    &.i-UiDetailEventLast{
+                        border: unset;
+                    }
+                    &.i-UiDetailWonEvent{
+                        border: 1px solid #DADADA;
+                        border-radius: 10px;
+                        padding: 1.5rem 0;
+                        &.i-UiSettingDetailApp{
+                            box-shadow: rgb(0 0 0 / 10%) 0px 2px 24px 0px;
+                            padding: 1.25rem 0;
+                            width: 100%;
+                            border: unset;
+                        }
+                        & .i-UiDetailWon{
+                            display: flex;
+                            gap: 1.6875rem;
+                            margin: 0 1.1875rem 1.5rem 1.875rem;
+                            & .iconWin{
+                                display: flex;
+                                align-items: center;
+                                width:30%;
+                            }
+                            & .i-UiTitleDescEvent{
+                                line-height: 22px;
+                                width: 65%;
+                                & .i-UiDetailVersion{
+                                    display: flex;
+                                    justify-content: space-between;
+                                    &.i-UiDetailVersion1{
+                                        margin-bottom: 1rem;
+                                    }
+                                    & .i-UiLabelVersion{
+                                        color: $body-text-inactive;
+                                    }
+                                }
+                            }
+                            &.i-UiDetailApp{
+                                justify-content: space-between;
+                                margin: 0 1rem;
+                                gap: 1.5rem;
+                            }
+                        }
+                    }
+                    & .i-UiTitleEvent{
+                        margin: 1rem 0;
+                        font-weight: 700;
+                        &.i-UiTitleEventWon{
+                            margin-top: 0;
+                        }
+                        &.i-UiTitleUptoDateAcc{
+                            color: #2ED573;
+                        }
+                        &.i-UiTitleOutofDateAcc{
+                            color: #F23838;
+                        }
+                    }
+                    & .i-UiDescEvent{
+                        line-height: 1.375rem;
+                        color: $body-text-inactive;
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                    & .i-UiStatEvent{
+                        display: flex;
+                        justify-content: space-between;
+                        margin: 1rem 0 1.5rem 0;
+                        & .i-UiLabelStat{
+                            color: #2ED573;
+                            display: flex;
+                            align-items: center;
+                            gap: 0.625rem;
+                            font-weight: 500;
+                            &.i-UiLabelStatEx{
+                                color: unset;
+                            }
+                        }
+                    }
+                }
+                &.i-UiMyEventsNext{
+                    padding-top: 0;
+                }
+                &.i-UiMyMemberNext{
+                    padding-top: 1.5rem;
+                }
+            }
+            & .i-UiMyiStyleProfile{
+                display: flex;
+                & .iconAva{
+                    display: flex;
+                    align-items: center;
+                }
+                & .iconAvaUnverif{
+                    background: #eaeaea;
+                    height: 2.9375rem;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-top: 1rem;
+                    &.iconAvaEdit{
+                        height: 6.5rem;
+                    }
+                }
+                
+                & .i-UiUserName{
+                    margin: 1rem;
+                    & h4 {
+                        font-weight: 800;
+                        margin-bottom: 0.5rem;
+                    }
+                    & .i-UiUserEmail{
+                        display: flex;
+                        gap: 0.6875rem;
+                    }
+                }
+                & .i-UiMyiStyleMoreIcon{
+                    display: flex;
+                    align-items: center;
+                    width: 100%;
+                    justify-content: flex-end;
+                }
+                &.i-UiEditAccPhoto{
+                    justify-content: center;
+                }
+            }
+            & .i-UiMyiStyleTransaction{
+                margin: 1.5rem 0 0.25rem 0;
+                & .i-UiTittleTransactions{
+                    margin-bottom: 1.375rem;
+                    font-weight: 700;
+                }
+                & .i-UiTitleMenu{
+                    display: flex;
+                    margin-bottom: 1.5rem;
+                    & .i-UiMenu{
+                        margin-left: 1rem;
+                        display: flex;
+                        align-items: center;
+                    }
+                    & .i-UiIconMenu{
+                        padding-right: 0.45rem
+                    }
+                    &.i-UiTitleMenuLast{
+                        margin-bottom: 0;
+                    }
+                }
+                &.i-UiMyiStyleAcc{
+                    margin: 0 0 0.25rem 0;
+                }
+            }
+            
+            /*end*/
+        }
+        & .i-UiContainerBase-wrap {
+            width: 100%;
+            box-sizing: border-box;
+            margin-left: auto;
+            margin-right: auto;
+            padding-bottom: 1.5rem;
+            /*olin*/
+            &.i-UiBannerMyStyle{
+                padding-bottom: 0.25rem;
+            }
+            /*end*/
+        }
+        & .i-UiTitle_Btn {
+            @include displayFlexbetween(flex, center, $contentBetween: true);
+            margin-bottom: 0.75rem;
+            & h4, h5 {
+                margin-bottom: 0;
+            }
+        }
+        & .i-UiBlockQuote {
+            font-size: $font-size-h5;
+            color: #808080;
+            line-height: 20px;
+        }
+        /*olin*/
+        & .i-UiRegisBankQuote {
+            font-size: 0.875rem;
+            line-height: 20px;
+            background-color: #FFFBDA;
+            padding: 1rem;
+            margin-top: 1.5rem;
+            &.i-UiEasyPay{
+                margin-top: 1rem;
+            }
+        }
+        /*end*/
+        & .i-UiCOntainerShadow {
+            box-shadow: rgb(0 0 0 / 10%) 0px 2px 24px 0px;
+            padding-top: 1rem;
+            margin-bottom: 1rem;
+        }
+        & .i-UiHead {
+            padding-top:$font-size-base;
+            padding-bottom: $font-size-base;
+            & h2 {
+                margin-bottom: 0.125rem;
+            }
+        }
+        & .i-UiMoreLink {
+            width: 100%;
+            @include displayFlexbetween(flex, center, $contentBetween: true);
+        }
+        & .i-UiUserName {
+            margin:$font-size-base 0;
+            & h2 {
+                @include displayFlexleft(flex, center, $contentLeft: true);
+                margin-bottom: 0.5rem;
+                width: 100%;
+                font-size: 1.125rem;
+            }
+        }
+        /* oline */
+        & .i-UiCategoryOB {
+            margin: 1rem 0 0 0;
+            &.i-UiRegis{
+                margin: 3rem 0 0 0;
+                & h1 {
+                    margin-bottom: 1rem;
+                }
+                & p{
+                    margin: 0 1.5rem 0 1.5rem;
+                    text-align: center;
+                    line-height: 1.375rem;
+                }
+                &.i-UiNoWishlist{
+                    color: $body-text-inactive;
+                }
+            }
+            & h1 {
+                @include displayFlexCenter(flex, $itemCenter: true);
+                margin-bottom: 1.125rem;
+                width: 100%;
+                font-size: 1.5rem;
+                font-weight: 800;
+            }
+            & p {
+                @include displayFlexCenter(flex, $itemCenter: true);
+            }
+            &.i-UiExLounge{
+                font-size: 0.875rem;
+                line-height: 1.25rem;
+            }
+            &.i-UiLabelEasyPay{
+                margin-top: 4.75rem;
+            }
+        }
+        & .i-UiSignUpWelcome{
+            margin: 1.6rem 0  0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            & h2 {
+                @include displayFlexCenter(flex, $itemCenter: true);
+                width: 100%;
+                margin-bottom: 2rem;
+                font-size: 1.125rem;
+            }
+            & p {
+                margin-top: 34px;
+                text-align: center;
+                line-height: 1.5rem;
+                font-size: 0.875rem;
+                &.setContent{
+                    text-align: unset;
+                    margin-top: 0;
+                }
+                &.i-UiRegisterJoin{
+                    margin-top: 0;
+                    text-align: unset;
+                }
+            }
+            &.i-UiChangePP{
+                margin-top: 1rem;
+            }
+            &.positionUpdate{
+                margin-top: -2.75rem;
+                & h3 {
+                    font-weight: 800;
+                }
+            }
+            &.setText{
+                align-items: flex-start;
+                margin-bottom: 1rem;
+                margin-top: 0;
+            }
+            &.i-UiForgotInstructions{
+                margin-top: 0;
+                flex-direction: row;
+                height: 5rem;
+                & .i-UiStarPointReqChangePass{
+                    p:nth-child(1){
+                        margin-bottom: 1rem;
+                        margin-top: 0;
+                    }
+                }
+                & .i-UiReqChangePass{
+                    margin-left: 1rem;
+                    height: 9.125rem;
+                    p:nth-child(1){
+                        margin-bottom: 1rem;
+                        text-align: left;
+                    }
+                    p:nth-child(2){
+                        margin-top: 0;
+                        text-align: left;
+                    }
+                }
+            }
+        }
+        & .i-UiFingerprint{
+            padding: 0 1.25rem;
+            margin: 2.75rem 0 1.5rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            & .i-fingerprint{
+                left: 78px;
+                position: absolute;            
+            }
+            &.set{
+                padding: unset;
+                gap: 2.5rem;
+            }
+            &.i-UiLoginLabelForgot{
+                margin-top: 0;
+            }
+        }
+        & .boxEmailPN{
+            font-weight: 500;
+            margin-top: 0.5rem;
+            & .i-UiCOntainerShadow{
+                padding-top: 0;
+                & .i-UiRoundBox{
+                    margin: 2rem 0 1rem 1rem;
+                    & .i-UiCheckboxBaseVM{
+                        position: absolute;
+                        & .i-UiCheckmark{
+                            position: absolute;
+                            top: 1px;
+                            left: 16px;
+                            height: 18px;
+                            width: 18px;
+                            border: 1px solid #808080;
+                            border-radius: 10px;
+                            z-index: 0;
+                        }
+                    }
+                }
+            }
+        }
+        /* end */
+
+        & .i-UiGridContainer {
+            display: grid;
+            grid-column-gap: $font-size-base;
+            grid-row-gap: $font-size-base;
+            margin-bottom: 1.5rem;
+            &.i-UiGridCol-2 {
+                grid-template-columns: auto auto;
+            }
+            /* oline */
+            &.i-UiGridCol-3 {
+                grid-template-columns: auto auto auto;
+                margin-top: 29px;
+            }
+            /*end*/
+            &.i-UiGridCol-4 {
+                grid-template-columns: auto auto auto auto;
+                /*olin*/
+                & .i-UiCategoryItem{
+                    font-weight: 400;
+                    & img {
+                        max-width: 100%;
+                        margin-bottom: 1rem;
+                    }
+                }
+                /*end*/
+            }
+            & .i-UiItemGrid {
+                height: 100%;
+                display: block;
+                overflow: hidden;
+                position: relative;
+                & img {
+                    width: 100%;
+                }
+            }
+        }
+        & .i-UiSectPromo {
+            width: 100%;
+            @include displayFlexleft(flex, center, $contentLeft: true);
+            flex-direction: column;
+            padding: 1.25rem 0;
+            & h4 {
+                font-weight: 700;
+                margin-bottom: 0.625rem;
+                font-family: $roboto;
+            }
+            & p {
+                margin-bottom: $font-size-base;
+            }
+            /*olin*/
+            & img{
+                filter: brightness(0.8);
+            }
+            & .i-UiExlounge{
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                padding: 1.375rem;
+                &.i-UiTypeExLounge{
+                    flex-direction: row;
+                    padding: 0;
+                    justify-content: space-between;
+                    margin-left: 1.5rem;
+                    width: 75%;
+                }
+                & .i-UiTittleExLounge{
+                    margin-bottom: 1rem;
+                    color: $body-bg;
+                    font-family: $nunito ;
+                    font-weight: 700;
+                    &.i-UiTypeTitleExLounge{
+                        margin: 0;
+                    }
+                }
+            }
+            &.i-UiExLoungeTitle{
+                flex-direction: row;
+                &.i-UiBannerExLimited{
+                    padding: 2rem 0 1rem 0;
+                }
+            }
+            &.i-UiNextBannerExLounge{
+                padding-bottom: 1rem;
+                padding-top:0;
+            }
+            /*end*/
+        }
+        & .i-UiCountDown {
+            display: inline-flex;
+            align-items: center;
+            font-size: 1.3125rem;
+            color: $body-bg;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 0.625rem;
+            & span {
+                width: 32px;
+                display: flex;
+                position: relative;
+                margin: 0 0.5rem;
+                &::after {
+                    content: ':';
+                    margin: 0 0.5rem;
+                    display: block;
+                }
+                &:last-child {
+                    margin-right: 0;
+                    &::after {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.body {
+    &.noScroll {
+        overflow: hidden;
+    }
+    & .i-UiLadim {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.i-UiLabelBase {
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+    font-size: 0.75rem;
+    line-height: 14px;
+    &.info {
+        background-color: #F3F3F3;
+    }
+    &.warning {
+        background-color: #FFFBDA;
+    }
+    &.notif {
+        background-color: $body-text-color;
+        color: $body-bg;
+        box-shadow: rgb(0 0 0 / 10%) 0px 2px 24px 0px;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        border-radius: 8px;
+        position: fixed;
+        width: 80%;
+        left: 0;
+        right: 0;
+        bottom: 20px;
+        margin: auto;
+    }
+    &.simpleLabel {
+        padding: 0;
+        color: #808080;
+        margin-top: 0.5rem;
+    }
+    /*olin*/
+    &.simpleLabel2 {
+        padding: 0.5rem 0 0 0;
+        font-size: 0.875rem;
+        font-weight: 400;
+    }
+    /*end*/
+}
+
+.i-UiBadge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $body-bg;
+    padding: 0.125rem 0.75rem;
+    border-radius: 9px;
+    margin-left: 0.75rem;
+}
+
+.i-UiRow {
+    margin: 0 -1.25rem;
+    display: flex;
+    flex-wrap: wrap;
+    &.i-UiBtnLogin{
+        margin: 0;
+    }
+}
+
+.i-UiIconContainer {
+    @include displayFlexCenter(flex, $itemCenter: true);
+    & img {
+        max-width: 100%;
+    }
+    
+}
+
+
+.i-UiHandwave {
+    animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
+    animation-duration: 2.5s;        /* Change to speed up or slow down */
+    animation-iteration-count: infinite;  /* Never stop waving :) */
+    transform-origin: 50% 50%;       /* Pivot around the bottom-left palm */
+    display: inline-block;
+    margin-left: 8px;
+}
+  
+  @keyframes wave-animation {
+      0% { transform: rotate( 0.0deg) }
+     10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
+     20% { transform: rotate(-8.0deg) }
+     30% { transform: rotate(14.0deg) }
+     40% { transform: rotate(-4.0deg) }
+     50% { transform: rotate(10.0deg) }
+     60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
+    100% { transform: rotate( 0.0deg) }
+}
+
+.i-UiBtnArea {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 1.25rem;
+    & .i-UiBtnBase:nth-child(1) {
+        margin-left: 0;
+    }
+    /*olin*/
+    &.i-UiBtnSkipOB{
+        margin-top: 0.5rem;
+        margin-bottom: 2.625rem;
+        gap: 0.9375rem;
+    }
+    &.i-UiIconConnectAcc{
+        justify-content: flex-end;
+    }
+    &.i-UiBtnAddCart{
+        justify-content: flex-start;
+        padding: 0;
+    }
+    &.i-UiBtnTabClaimRef{
+        gap: 0.5rem;
+        margin: 1rem 0 1.5rem 0;
+    }
+    &.i-UiBtnSettingUpdateApp{
+        padding: 0;
+        margin-top: 1.5rem;
+    }
+    /*end*/
+}
+
+.i-UiPreview360 {
+    & .cloudimage-360 {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+        background-color: #feef78;
+        & .i-UiIconContainer {
+            width: 70px;
+            height: 50px;
+            display: flex;
+            align-self: flex-end;
+            position: absolute;
+        }
+        & .i-UiBtnArea {
+            margin-bottom: 1rem;
+            position: absolute;
+            bottom: 0;
+            & .i-UiIconContainer {
+                width: 28px;
+                height: 28px;
+                position: relative;
+            }
+        }
+    }
+    & p {
+        display: block;
+        display: -webkit-box;
+        max-width: 100%;
+        height: 67px;
+        margin: 0 auto;
+        font-size: 14px;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+.i-UiListPrdSwiper, .i-UiSingleListPrd {
+    & .i-UiBtnArea {
+        position: absolute;
+        width: auto;
+        bottom: 112px;
+        right: 0px;
+    }
+}
+
+.i-UiBodyArticle {
+    position: relative;
+    color: $body-bg;
+    &:hover {
+        color: $body-bg;
+    }
+    & .i-UiTitleArticle {
+        position: absolute;
+        padding:1.25rem;
+        width: 100%;
+        display: block;
+        background-color: rgb(0 0 0 / 30%);
+        bottom: 4px;
+        box-sizing: border-box;
+        min-height: 122px;
+    }
+}
+
+.i-UiChipRoot {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 50px;
+    border: 1px solid #D0D0D0;
+    padding: 0.675rem 1.25rem;
+    font-size: 0.875rem;
+    &.i-UiChipDeletable {
+        padding: 0 0 0 1.25rem ;
+        border: 1px solid $body-text-color;
+        & span:nth-child(1) {
+            margin-right: 0.5rem;
+        }
+        & .i-UiIconContainer {
+            padding: 0.875rem 1rem;
+            background-color: #F5F5F5;
+            border-radius: 0 50px 50px 0;
+        }
+    }
+    /*olin*/
+    &.i-UiChip{
+        margin-right: 1rem;
+    }
+}
+
+.i-UiDrawerBottom {
+    bottom: 0;
+    background-color: #ffffff;
+    left:0;
+    top: 0;
+    padding:0 0 3rem 0;
+    position:fixed;
+    height: 100%;
+    z-index:1200;
+    max-width: inherit;
+    box-sizing: border-box;
+    transform: translate(0, 100vh);
+    right: 0;
+    margin: auto;
+    will-change: transform;
+    & .i-UiDrawerHeader {
+        @include displayFlexbetween(flex, center, $contentBetween: true);
+        min-height: 64px; 
+        position: fixed;
+        background-color: #fff;
+        width: 100%;
+        left: 0;
+        padding:0 1rem;
+        box-sizing: border-box;
+        z-index: 111;
+    }
+    & .i-UiDrawerBody {
+        padding: 5rem 0 1rem 0;
+        overflow: auto;
+        height: 100vh;
+        & h2 {
+            margin-bottom: 0.625rem;
+        }
+        & .i-UiDrawerRow {
+            padding-bottom: 1rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            border-bottom: 1px solid #DADADA;
+            margin-bottom: 1rem;
+          
+        }
+    }
+}
+
+.i-UiTitleLogo {
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 1.125rem;
+    & span {
+        margin-left: 0.75rem;
+        & h4 {
+            margin-bottom: 0;
+        }
+        & p {
+            font-size: 0.875rem;
+        }
+        /*olin*/
+        & h5{
+            margin-bottom: 0;
+            line-height: 1.5rem;
+            font-weight: 800;
+        }
+    }
+    &.i-UiFirstSlot{
+        margin-top: 1.5rem;
+    }
+    &.i-UiMallFilterSlot{
+        border: 1px solid #D0D0D0;
+        padding: 0.75rem;
+        border-radius: 10px;
+    }
+    &.i-UiMallFilterSelected{
+        border: 1px solid $theme-color;
+    }
+    /*end*/
+}
+
+.menu--open {
+    transition: transform 300ms ease 0s;
+    transform: translate(0, 0);
+}
+
+.i-UiOverlay {
+    position: absolute;
+    max-width: inherit;
+    visibility: hidden;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background-color:$body-bg;
+    opacity: 0;
+    z-index: 1111;
+    transition: opacity 1s ease-in;
+}
+.i-UiLadim {
+    position: absolute;
+    max-width: inherit;
+    visibility: hidden;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background-color:rgb(37 37 37 / 50%);
+    opacity: 0;
+    z-index: 1111;
+    transition: opacity 1s ease-in;
+}
+.accordion-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    width: 800px;
+    margin: 0 auto;
+  }
+  
+  .item {
+    width: 100%;
+    padding: 2em;
+  }
+  
+  
+  /* Accordion */
+.i-UiAccordion {
+    width: 100%;
+    background: #FFF;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    & .link {
+        cursor: pointer;
+        display: block;
+        padding: 1rem 1rem 1rem 0;
+        font-size: 0.875rem;
+        font-weight: 600;
+        @include displayFlexbetween(flex, $positionCenter, $contentBetween: true);
+        position: relative;
+        -webkit-transition: all 0.4s ease;
+        -o-transition: all 0.4s ease;
+        transition: all 0.4s ease;
+        /*olin*/
+        &.linkCategoriesFilter{
+            padding: 1.5rem 0rem;
+            font-weight: unset;
+        }
+        &.linkSubFilter{
+            padding: 0.875rem 0 0.875rem 1rem;
+            font-weight: unset;
+        }
+        &.linkLastFilterCat{
+            padding: 0.875rem 0 0.875rem 2rem;
+            font-weight: unset;
+        }
+        & .radio {
+            input[type="radio"] {
+              position: absolute;
+              opacity: 0;
+              + .radio-label {
+                &:before {
+                  content: '';
+                  background: #ffffff;
+                  border-radius: 100%;
+                  border: 1px solid #252525;
+                  display: inline-block;
+                  width: 1.125rem;
+                  height: 1.125rem;
+                  position: relative;
+                  top: -0.2em;
+                  margin-right: 1em; 
+                  vertical-align: top;
+                  cursor: pointer;
+                  text-align: center;
+                  transition: all 250ms ease;
+                }
+              }
+              &:checked {
+                + .radio-label {
+                  &:before {
+                    background-color: #252525;
+                    box-shadow: inset 0 0 0 4px #FED000;
+                    border: none;
+                  }
+                }
+              }
+              &:focus {
+                + .radio-label {
+                  &:before {
+                    outline: none;
+                    border-color: #252525;
+                  }
+                }
+              }
+              + .radio-label {
+                &:empty {
+                  &:before {
+                    margin-right: 0;
+                  }
+                }
+              }
+            }
+        }
+        /*end*/
+    }
+    /*olin*/
+    #accordion2{
+        & li {
+            & .link svg {
+                -webkit-transition: all 0.4s ease;
+                -o-transition: all 0.4s ease;
+                transition: all 0.4s ease;
+            }
+            &.sub-acc{
+                & .link {
+                    border-bottom :none;
+                    & svg {
+                        -webkit-transform: rotate(180deg);
+                        -ms-transform: rotate(180deg);
+                        -o-transform: rotate(180deg);
+                        transform: rotate(0deg);
+                    }
+                }  
+            }
+        }
+    }
+    /*end*/
+    & li {
+        border-bottom: 1px solid #EAEAEA;
+        &:last-child { border-bottom: none; }
+        & .link svg {
+            -webkit-transition: all 0.4s ease;
+            -o-transition: all 0.4s ease;
+            transition: all 0.4s ease;
+        }
+        &.open {
+            & .link {
+                border-bottom :none;
+                & svg {
+                    -webkit-transform: rotate(180deg);
+                    -ms-transform: rotate(180deg);
+                    -o-transform: rotate(180deg);
+                    transform: rotate(180deg);
+                }
+            }
+        }
+        & .submenu {
+            display: none;
+            font-size: 14px;
+            padding-bottom: 1.75rem;
+            width: 100%;
+            box-sizing: border-box;
+            & img {
+                max-width: 100%;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}
+
+/*List Category*/
+.i-UiListCategory {
+    margin-bottom: 0 !important;
+    & .i-UiCategoryItem {
+        @include displayFlexCenter(flex, $itemCenter: true);
+        flex-direction: column;
+        font-size: 0.75rem;
+        color: $body-text-color;
+        margin: auto;
+        width: 74px;
+        & span {
+            text-align: center;
+            height: 30px;
+            overflow: hidden;
+        }
+    }
+    /* oline */
+    & .i-UiFavCategory {
+        @include displayFlexCenter(flex, $itemCenter: true);
+        flex-direction: column;
+        font-size: 0.875rem;
+        color: #252525;
+        margin: auto;
+        & span {
+            text-align: center;
+            height: 29px;
+            margin-top: 14px;
+            line-height: 16px;
+        }
+    }
+}
+
+.i-UiContainerPrd {
+    & h4 {
+        margin-bottom: 0;
+        font-weight: 400;
+        font-family: $roboto;
+    }
+}
+
+.i-UiCheckOutSection {
+    display: $flex;
+    flex-direction: column;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid $body-text-color;
+    margin-bottom: 1.5rem;
+    /*olin*/
+    &.i-UiLogin{
+        margin-top: 1.5rem;
+        border: unset;
+        padding-bottom: 0;
+    }
+    /*end*/
+    & .i-UiTitle {
+        @include displayFlexbetween(flex, $positionCenter, $contentBetween: true);
+        margin-bottom: $font-size-base;
+        & h4 {
+            margin-bottom: 0;
+            font-weight: 400;
+            font-family: $roboto;
+        }
+        & h5 {
+            margin-bottom: 0;
+        }
+        & .i-UiBtnSizeS {
+            width: 38%;
+        }
+        /*olin*/
+        &.i-UiTitle_BtnLogin{
+            margin: 0 0 0 1.25rem;
+            font-size: 0.875rem;
+        }
+        /*end*/
+    }
+    & .i-UiBox {
+        & .i-UiBodyBox {
+            & .i-UiDeliveryAddress {
+                font-size: $font-size-h5;
+                line-height: 20px;
+                margin-bottom: 1rem;
+                display: block;
+            }
+            & .i-UiTypeDelivery {
+                @include displayFlexbetween(flex, $positionCenter, $contentBetween: true);
+                margin-bottom: $font-size-base;
+                & .i-UiCourier {
+                    display: flex;
+                    flex-direction: column;
+                    font-weight: 700;
+                    font-size: $font-size-h5;
+                    row-gap: 6px;
+                }
+                & .i-UiPriceDelivery {
+                    font-weight: 700;
+                }
+            }
+            & .i-UiCourierTime {
+                @extend .i-UiDeliveryAddress;
+            }
+        }
+    }
+}
+
+.i-UiMap {
+    width: 100%;
+    position: relative;
+    & .i-UiPinPoin {
+        position: fixed;
+        z-index: 44;
+        top: calc(50% - 52px);
+        left: calc(50% - 25.3px);
+        transition: top .3s ease-out;
+    }
+}
+
+
+.i-UiListCourier {
+    margin-top: 1rem;
+    & .list_hv_item {
+        border:1px solid #D0D0D0;
+        border-radius: 5px;
+        margin-bottom: 1rem;
+        & .link {
+            padding:1rem;
+        }
+        & .submenu {
+            padding:1rem;
+            border-top: 1px solid #D0D0D0;
+            & .i-UiBox {
+                & .pickUp_detil {
+                    font-size: $font-size-h5;
+                }
+            }
+        }
+        & .i-UiBox {
+            & .i-UiHeadBox {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                padding-bottom: 0.625rem;
+                & .i-UiType {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 4px;
+                    & span {
+                        font-size: $font-size-h5;
+                        &:nth-child(1) {
+                            font-weight: 700;
+                        }
+                    }
+                }
+                /*olin*/
+                & .i-UiVerif{
+                    font-size: $font-size-h4;
+                }
+                /*END*/
+                & .checkList {
+                    width: auto;
+                    padding:0 0 0 1rem;
+                    & .i-UiIconContainer {
+                        visibility: hidden;
+                        opacity: 0;
+                        transition: all 0.3s ease-in-out;
+                    }
+                }
+            } 
+            & .note {
+                color: #808080;
+                font-size: $font-size-h6;
+                padding: 0 0 0.5rem 0;
+                margin: 0 1rem;
+                border-bottom: 1px solid #D0D0D0;
+            }
+            & .pickUp_detil {
+                padding: 0.5rem 1rem 1rem 1rem;
+                line-height: 18px;
+                font-size: $font-size-h6;
+            }
+            &.i-UiChecked {
+                background-color: #FFFBDA;
+                border-color: $text-color;
+                & .checkList {
+                    & .i-UiIconContainer {
+                        visibility: visible;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+    & .open {
+        & .link {
+            &.i-UiBox {
+                border-bottom: 1px solid #D0D0D0;
+                & svg {
+                    -webkit-transform: none;
+                    -ms-transform: none;
+                    -o-transform: none;
+                    transform: none;
+                }
+            }
+        }
+    }
+    & .link {
+        padding-right: 0;
+        align-items: flex-start;
+        & .i-UiIconContainer {
+            margin-top: 1rem;
+        }
+        &.i-UiBox {
+            padding-top: 0;
+            padding-bottom: 0;
+            & .i-UiHeadBox {
+                & .i-UiType {
+                    display: flex;
+                    align-items: flex-start;
+                    justify-content: space-between;
+                    margin-bottom: 0.5rem;
+                    & .pick-up-name {
+                        display: flex;
+                        flex-direction: column;
+                        row-gap: 0.5rem;
+                        & span {
+                            font-weight: 400;
+                            font-size: 0.875rem;
+                        }
+                    }
+                    & .i-UiIconContainer {
+                        margin-top: 0;
+                        visibility: hidden;
+                        opacity: 0;
+                        transition: all 0.3s ease-in-out;
+                    }
+                }
+                & span:last-child {
+                    font-weight: 400;
+                    font-size: 0.75rem;
+                }
+            }
+            &.i-UiChecked {
+                background-color: #FFFBDA;
+                border-color: $text-color;
+                & .i-UiHeadBox {
+                    & .i-UiType {
+                        & .pick-up-name {
+                            & span:last-child {
+                                font-weight: 700;
+                            }
+                        }
+                    }
+                    & .i-UiIconContainer {
+                        visibility: visible;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+    & .submenu {
+        & .i-UiBox {
+            & .i-UiType {
+                line-height: 20px;
+            }
+            &.i-UiChecked {
+               & .i-UiType {
+                   font-weight: 700;
+               } 
+            }
+        }
+    }
+    & .i-UiCourierDetil {
+        display: flex;
+        flex-direction: column;
+        row-gap:0.5rem;
+        padding-right: 1rem;
+        & h5 {
+            margin-bottom: 0;
+            font-family: $roboto;
+        }
+        & span {
+            font-size: $font-size-h5;
+            font-weight: 400;
+            &:last-child {
+                font-size: $font-size-h6;
+            }
+        }
+    }
+}
+
+/*olin*/
+.wrap {
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    & .type {
+        width: fit-content;
+         ul {
+            display: flex;
+            flex-wrap: wrap;
+            -webkit-box-pack: justify;
+            gap: 1rem;
+        }
+        
+        input {
+            display: none;
+        }
+        label {
+            width: fit-content;
+            display: flex;
+            align-items: center;
+            padding: 0.875rem 1.5rem;
+            font-size: 0.875rem;
+            border: solid 1px #d0d0d0;
+            color: #252525;
+            border-radius: 30px;
+            cursor: pointer;
+            box-sizing: border-box;
+            text-align: center;
+            gap: 0.375rem;
+            transition: all ease .3s;
+            & .i-UiColorFilter{
+                padding: 10px;
+                border-radius: 50%;
+                &.i-ColorRed{
+                    background-color: #FF8686;
+                }
+                &.i-ColorWhite{
+                    background-color: #FFFFFF;
+                    border: 1px solid #00000029;
+                }
+                &.i-ColorBlack{
+                    background-color: #000000;
+                }
+                &.i-ColorGreen{
+                    background-color: #3FA743;
+                }
+            }
+        }
+        input:checked + label,input:checked {
+            border: solid 1px #FA751D;
+            color: #FA751D;
+            font-weight: 700;
+        }
+    }
+}
+/*end*/
+
+@media only screen and (min-width: 640px) {
+    .body {
+        &.noScroll {
+            overflow: auto;
+        }
+    } 
+}
+
+  
+

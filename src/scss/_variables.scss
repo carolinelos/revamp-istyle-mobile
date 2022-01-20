@@ -1,0 +1,62 @@
+//-------------------- Base Colors --------------------//
+
+$theme-color:                           #fa751d;
+$theme-color-secondary:                 #FED000;                  		
+$body-text-color:               		#252525;
+
+$body-bg:								#fff; // White
+
+$text-color:							#252525;
+
+$heading-color:                 		$body-bg;
+
+/* oline */
+$theme-color-inactive:                   #F3F3F3;
+$body-text-inactive:                     #AAAAAA;
+
+//-------------------- Font Family --------------------//
+$roboto:                                'Roboto', sans-serif;
+$nunito:                                'Nunito sans', sans-serif;
+
+//-------------------- Font Sizes --------------------//
+
+$font-size-base:                		1rem;
+$font-size-h1:                  		($font-size-base * 1.375);
+$font-size-h2:                  		($font-size-base * 1.25);
+$font-size-h3:                  		($font-size-base * 1.125);
+$font-size-h4:                  		($font-size-base * 1);
+$font-size-h5:                  		($font-size-base * 0.875);
+$font-size-h6:                  		($font-size-base * 0.75);
+$font-size-body:						$font-size-base;
+
+//-------------------- Mixin Display --------------------//
+
+$flex:                                  flex;
+$block:                                 block;
+$none:                                  none;
+
+$positionCenter:                       center;
+$justifyContentLeft:               flex-start;
+$justifyContentBetween:         space-between;
+
+@mixin displayFlexCenter ($flex, $itemCenter: true) {
+    display: $flex;
+    @if $itemCenter {
+        align-items: $positionCenter;
+        justify-content: $positionCenter;
+    }
+}
+@mixin displayFlexleft ($flex, $positionCenter, $contentLeft: true) {
+    display: $flex;
+    align-items: $positionCenter;
+    @if $contentLeft {
+        justify-content:$justifyContentLeft ;
+    }
+}
+@mixin displayFlexbetween ($flex, $positionCenter, $contentBetween: true) {
+    display: $flex;
+    align-items: $positionCenter;
+    @if $contentBetween {
+        justify-content:$justifyContentBetween ;
+    }
+}

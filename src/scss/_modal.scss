@@ -1,0 +1,198 @@
+.i-UiModal {
+    position: fixed;
+    height:100vh;
+    max-width: inherit;
+    left: 0;
+    right: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1200;
+    opacity: 0;
+    transition: opacity 0.3s;
+    cursor: pointer;
+    margin: auto;
+    visibility: hidden;
+    &.open {
+      visibility: visible;
+      opacity: 1;
+    }
+    & .i-UiModal__window {
+        background-color: #ffffff;
+        cursor: default;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        @media screen and (min-width: 576px) {
+          margin: 50px;
+          max-width: 500px;
+          height: initial;
+          border-radius: 4px;
+          min-height: fit-content;
+        }
+        & .i-UiModal__header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.25rem;
+            & h4 {
+                margin-bottom: 0;
+                font-weight: 700;
+                font-family: $roboto;
+            }
+        }
+        & .i-UiModal__body {
+            padding: 1.25rem 1.25rem 0 1.25rem;
+            display: flex;
+            flex-direction: column;
+            row-gap: 1rem;
+            & .i-UiLabelBase {
+                font-size: $font-size-h5;
+            }
+            /*olin*/
+            &.i-UiConfirmDlt{
+               row-gap: 0.5rem;
+               text-align: center;
+               font-size: 0.875rem;
+            }
+            & .i-UiTitleConfDLt{
+                padding-top: 1.25rem;
+                &.i-UiIconSad{
+                    padding-bottom: 1.5rem;
+                }
+            }
+            & .i-UiQfor_dlt{
+                padding: 0 1.25rem 0 1.25rem;
+                line-height: 1.25rem;
+            }
+        }
+        & .i-UiModal__footer {
+            border-top: 1px solid #e9ecef;
+            display: flex;
+            justify-content: flex-end;
+            padding: 1.25rem;
+        }
+        & .i-UiBtnArea {
+            flex-direction: column;
+            row-gap: 1rem;
+            /*olin*/
+            &.i-UiBtnDltWL{
+                flex-direction: row;
+                margin-top: 1.5rem;
+            }
+            /*end*/
+        }
+    }
+}
+
+.i-UiPopLayer {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    max-width: inherit;
+    z-index: 1200;
+    background-color: $body-bg;
+    border-radius: 30px 30px 0 0;
+    padding-top: 40px;
+    box-sizing: border-box;
+    & .i-UiPopHeader {
+        padding: 0 1rem 0;
+        & h4 {
+            margin-bottom: 0;
+        }
+    }
+    /*olin*/
+    &.i-UiPopLayerFp{
+        padding-top: 1.5rem;
+    }
+    & .i-UiPopHeaderFp {
+        justify-content: center;
+        display: flex;
+        & h4 {
+            margin-bottom: 0;
+            font-size: 1.125rem;
+        }
+    }
+    /*end*/
+    & .i-UiPopBody {
+        padding: 1rem 1.25rem;
+        max-height: 75vh;
+        overflow-y: auto;
+        & li {
+            padding: 1.625rem 0;
+            border-bottom: 1px solid #DADADA;
+            &:last-child {
+                border-bottom: none;
+            }
+            /*olin*/
+            & .i-UiMyiStyleIconPopUp{
+                padding-right: 1.625rem;
+            }
+        }
+        & .i-UiFpLogin{
+            margin-top: 1.813rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            & .i-UiFpLoginDesc{
+                color: $body-text-inactive;
+                margin-bottom: 2.063rem;
+            }
+        }
+        & .i-UiListCategory{
+            grid-template-columns: auto auto auto auto;
+            display: grid;
+            margin-top: 1.5rem;
+            row-gap: 1.5rem;
+            & .i-UiShareIcon{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: #E7E7E7;
+                width: 70%;
+                padding: 0.688rem 0;
+                border-radius: 50%;
+                &.i-UiShareIconBlue{
+                    background: #3867D6;
+                }
+                &.i-UiShareIconEmail{
+                    background: #4B7BEC;
+                }
+                &.i-UiShareIconWA{
+                    background: #28C34C;
+                }
+            }
+            /*& span:nth-child(1){
+                background: #E7E7E7;
+                width: 70%;
+                padding: 0.688rem 0;
+                border-radius: 50%;
+            }*/
+            & span:nth-child(2){
+                margin-top: 0.625rem;
+                font-size: 0.875rem;
+            }
+
+        }
+    }
+}
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
